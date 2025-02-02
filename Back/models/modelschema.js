@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
-
-//schema 
+// Schema
 const formSchema = new mongoose.Schema({
     id: { type: String, required: true },
     name: { type: String, required: true },
@@ -10,6 +9,6 @@ const formSchema = new mongoose.Schema({
     password: { type: String, required: true },
     phone: { type: String, required: true },
     address: { type: String, required: true }
-})
+});
 
 export const formDetails = mongoose.model("formDetails", formSchema);

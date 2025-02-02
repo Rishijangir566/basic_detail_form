@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 // import login from "./Login"
-import axios from "axios"
+// import axios from "axios"
 import { Link } from "react-router-dom"
-
+import instance from "./axiosConfig"
 
 function Register() {
       // const [isLogin ,setIsLogin]=useState(false)
@@ -16,11 +16,11 @@ function Register() {
     })
 
     useEffect(()=>{
-        fetchData()
+        postData()
     },[formValues])
   
-   async function fetchData(){
-        const result = await axios.get("http://localhost:3009/get")
+   async function postData(){
+        const result = await instance.post("/add")
         setFormValues(result.data)
     }
 
