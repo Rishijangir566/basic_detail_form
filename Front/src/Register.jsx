@@ -1,5 +1,4 @@
 import {useState } from "react"
-// import login from "./Login"
 // import axios from "axios"
 import { Link } from "react-router-dom"
 import instance from "./axiosConfig"
@@ -55,11 +54,12 @@ function Register() {
 
     return (
         <>
-            <div className="page h-[100vh] ">
+        
+            <div className="page h-[80vh] ">
 
                 <h2 className="text-5xl font-bold text-center text-blue-900 py-4"> Registration-Form </h2>
 
-                <form action="" onSubmit={handleSubmit} className="mx-auto mt-16  shadow-lg shadow-black/50 rounded-xl  py-4 text-center bg-amber-100 w-[25%]">
+                <form action="" onSubmit={handleSubmit} className="mx-auto mt-8  shadow-lg shadow-black/50 rounded-xl  py-4 text-center bg-amber-100 w-[25%]">
                     <h2 className="text-center text-2xl font-medium mb-4 text-blue-900">Basic - Details</h2>
 
                     <input type="name"
