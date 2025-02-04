@@ -1,8 +1,8 @@
 
 import { formDetails } from "../models/modelschema.js";
-import jwt from "jsonwebtoken"
+// import jwt from "jsonwebtoken"
 
-const jwtKey = process.env.JWT_SECRET
+// const jwtKey = process.env.JWT_SECRET
 
 export async function postData(req, res) {
     try {
@@ -19,18 +19,18 @@ export async function postData(req, res) {
         });
 
         const savedData = await newData.save();
-        const token = jwt.sign({ id: savedData._id, email: savedData.email }, jwtKey, { expiresIn: "1h" });
-  console.log(token);
+//         const token = jwt.sign({ id: savedData.id, email: savedData.email }, jwtKey, { expiresIn: "1h" });
+//   console.log(token);
   
-        res.status(201).json({
+        res.status(201).send({
             message: "Data Saved Successfully",
-            token,
+            // token,
             data: savedData,
             existingData: formdata,
         });
     } catch (error) {
         console.error('Error:', error);
-        res.status(500).json({
+        res.status(500).send({
             message: "Error saving data",
             error: error.message,
         });
