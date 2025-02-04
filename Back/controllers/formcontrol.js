@@ -6,7 +6,7 @@ const jwtKey = process.env.JWT_SECRET
 
 export async function postData(req, res) {
     try {
-
+        
         const formdata = await formDetails.find();
         const { name, fName, email, password, phone, address } = req.body;
         const newData = new formDetails({
@@ -19,7 +19,7 @@ export async function postData(req, res) {
         });
 
         const savedData = await newData.save();
-        const token = jwt.sign({ id: savedData._id, email: savedData.email }, JWT_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ id: savedData._id, email: savedData.email }, jwtKey, { expiresIn: "1h" });
   console.log(token);
   
         res.status(201).json({
