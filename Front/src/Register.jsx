@@ -67,6 +67,7 @@ function Register() {
                         placeholder="Enter Your Name"
                         className="border-b pl-2 w-[20rem] font-medium my-2 shadow-black/50 bg-amber-100 text-black"
                         value={formValues.name}
+                        required
                         onChange={handleInputchange}
                     />
                     <input type="fname"
@@ -74,6 +75,7 @@ function Register() {
                         placeholder="Enter Your Father Name"
                         className="border-b pl-2 w-[20rem] font-medium my-2 text-black"
                         value={formValues.fName}
+                        required
                         onChange={handleInputchange}
                     />
                     <input type="email"
@@ -81,6 +83,7 @@ function Register() {
                         placeholder="Enter Your E-mail"
                         className="border-b pl-2 w-[20rem] font-medium my-2 text-black"
                         value={formValues.email}
+                        required
                         onChange={handleInputchange}
                     />
                     <input type="password"
@@ -88,6 +91,7 @@ function Register() {
                         placeholder="Enter Your Password"
                         className="border-b pl-2 w-[20rem] font-medium my-2 text-black"
                         value={formValues.password}
+                        required
                         onChange={handleInputchange}
                     />
                     <input type="phone"
@@ -95,6 +99,7 @@ function Register() {
                         placeholder="Enter Your Number"
                         className="border-b pl-2 w-[20rem] font-medium my-2 text-black"
                         value={formValues.phone}
+                        required
                         onChange={handleInputchange}
                     />
 
@@ -103,8 +108,15 @@ function Register() {
                         placeholder="Enter Your Address"
                         className="border-b pl-2 w-[20rem] font-medium my-2 text-black"
                         value={formValues.address}
+                        required
                         onChange={handleInputchange}
                     /> <br />
+
+                    {/* <input type="file"
+                        className="border-b pl-2 w-[20rem] font-medium my-2 text-black"
+                      name="aadhar1"
+                      
+                    /> */}
 
                     <button type="submit" className="bg-green-600 mr-4 text-white text-xl rounded font-medium py-1 px-8 mt-8"> Register</button>
                     <button > <Link to="/login" className="bg-blue-900 ml-4 text-white text-xl rounded font-medium py-1 px-8 mt-8" > Login</Link> </button>

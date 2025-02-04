@@ -3,6 +3,6 @@ import { postData ,getData } from "../controllers/formcontrol.js"
 
 export const formRouter = express.Router()
 
-formRouter.get("/get",getData)
+formRouter.post("/login",getData)
 
 formRouter.post("/add",postData)
