@@ -10,7 +10,7 @@ function Header() {
 
                 <div >
                     <button><Link to="/" className="bg-blue-900 ml-4 text-white text-xl rounded font-medium py-1 px-8 mt-4"> Register</Link> </button>
-                    <button > <Link to="/login" className="bg-blue-900 ml-4 text-white text-xl rounded font-medium py-1 px-8 mt-4" > Sign up </Link> </button>
+                    <button > <Link to="/login" className="bg-blue-900 ml-4 text-white text-xl rounded font-medium py-1 px-8 mt-4" > Login </Link> </button>
                     <button className="bg-blue-900 ml-4 text-white text-xl rounded font-medium py-1 px-8 mt-4"> Log Out </button>
 
                 </div>

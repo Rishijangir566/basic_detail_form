@@ -118,7 +118,7 @@ function Register() {
                       
                     /> */}
 
-                    <button type="submit" className="bg-green-600 mr-4 text-white text-xl rounded font-medium py-1 px-8 mt-8"> Register</button>
+                    <button type="submit" className="bg-green-600 mr-4 text-white text-xl rounded font-medium py-1 px-8 mt-8"> Submit </button>
                     <button > <Link to="/login" className="bg-blue-900 ml-4 text-white text-xl rounded font-medium py-1 px-8 mt-8" > Login</Link> </button>
 
                 </form>

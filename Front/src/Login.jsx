@@ -2,8 +2,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import instance from './axiosConfig'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+    const navigate=useNavigate();
 
     const [matchData, setMetchData] = useState({
         email: "",
@@ -27,13 +29,17 @@ function Login() {
             const response = await instance.post("/login", matchData);
             console.log(response.data);  
             alert("your login successfully")
-
-        }
-        catch(error){
-            console.log("error is :" +error);  
-        }
-         console.log(matchData);
-         
+             setMetchData({
+                email: "",
+                password: "",
+             })
+             navigate("/profile")
+            }
+            catch(error){
+                console.log("error is :" +error);  
+            }
+            console.log(matchData);
+            
          
     }
 
@@ -60,7 +66,7 @@ function Login() {
                     required
                     onChange={handleInputchange}
                 /> <br />
-                <button type="submit"  className="bg-green-600 mr-4 text-white text-xl rounded font-medium py-2 px-8 mt-4"> Login</button>
+                <button type="submit"   className="bg-green-600 mr-4 text-white text-xl rounded font-medium py-2 px-8 mt-4"> Submit</button>
                 <button><Link to="/" className="bg-blue-900 ml-4 text-white text-xl rounded font-medium py-2 px-8 mt-4"> Register</Link> </button>
 
             </form>

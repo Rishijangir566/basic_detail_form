@@ -1,5 +1,8 @@
 
 import { formDetails } from "../models/modelschema.js";
+import jwt from "jsonwebtoken"
+
+const jwtKey = process.env.JWT_SECRET
 
 export async function postData(req, res) {
     try {
@@ -16,8 +19,12 @@ export async function postData(req, res) {
         });
 
         const savedData = await newData.save();
+        const token = jwt.sign({ id: savedData._id, email: savedData.email }, JWT_SECRET, { expiresIn: "1h" });
+  console.log(token);
+  
         res.status(201).json({
             message: "Data Saved Successfully",
+            token,
             data: savedData,
             existingData: formdata,
         });
@@ -52,3 +59,8 @@ export async function getData(req, res) {
     }
 
 }
+
+export async function logOut() {
+
+
+} 
