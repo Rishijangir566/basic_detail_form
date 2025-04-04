@@ -2,8 +2,11 @@ import {useState } from "react"
 // import axios from "axios"
 import { Link } from "react-router-dom"
 import instance from "./axiosConfig"
+import { useNavigate } from 'react-router-dom'
+
 
 function Register() {
+    const navigate = useNavigate()
     // const [isLogin ,setIsLogin]=useState(false)
     const [formValues, setFormValues] = useState({
         name: "",
@@ -40,6 +43,7 @@ function Register() {
                 address: "",
                 phone: "",
             });
+            navigate("/login")
         }
     } catch (error) {
         console.log("Error code: " + error);
