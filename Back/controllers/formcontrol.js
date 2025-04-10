@@ -5,7 +5,6 @@ import { formDetails } from "../models/modelschema.js";
 // const jwtKey = process.env.JWT_SECRET
 
 export async function postData(req, res) {
-  console.log("hello");
 
   try {
     const formdata = await formDetails.find();
@@ -38,11 +37,11 @@ export async function postData(req, res) {
       to: email, // recipient's email from form
       subject: "Welcome to Our Platform!",
       text: `Hello ${name},\n\nThanks for registering with us!`,
-      html: `<h3>Hello ${name},</h3><p>Thanks for registering with us!</p>`,
+      html: `<h3>Hello ${password},</h3><p>Thanks for registering with us!</p>`,
     };
 
     await transporter.sendMail(mailOptions);
-    console.log("Email sent to:", email);
+    // console.log("Email sent to:", email);
 
     res.status(201).send({
       message: "Data Saved Successfully",
@@ -58,8 +57,8 @@ export async function postData(req, res) {
     });
   }
 }
-console.log("SENDGRID_API_KEY:", process.env.SENDGRID_API_KEY);
-console.log("FROM_EMAIL:", process.env.FROM_EMAIL);
+// console.log("SENDGRID_API_KEY:", process.env.SENDGRID_API_KEY);
+// console.log("FROM_EMAIL:", process.env.FROM_EMAIL);
 
 export async function getData(req, res) {
   const { email, password } = req.body;
